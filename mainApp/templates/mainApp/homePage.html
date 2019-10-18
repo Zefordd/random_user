@@ -1,0 +1,28 @@
+{% extends "mainApp/wrapper.html" %}
+
+{% block content %}
+    <form action="save_random_users" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <br>
+        <button type="submit">Добавить пользователей в БД</button>
+    </form>
+
+    <form action="show_users" method="POST">
+            {% csrf_token %}
+            <br>
+            <button type="submit">Показать пользователей</button>
+    </form>
+    
+    {% if count %}
+        <p>Добавлено пользователей: {{ count }}</p>
+    {% endif %}
+
+    <h5>{{error_message}}</h5>
+    <br><br><br>
+
+    {% if random_users %}
+        {% include 'mainApp/users.html' %}
+    {% endif %}
+
+{% endblock %}

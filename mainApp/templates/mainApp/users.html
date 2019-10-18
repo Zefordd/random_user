@@ -1,0 +1,27 @@
+<br>
+    <table style="width:50%">
+            <tr>
+                <th>First name</th>
+                <th>Last name</th>
+                <th>Gender</th>
+                <th>Location</th>
+                <th>Email</th>
+            </tr>
+        {% for r_user in random_users %}
+            <tr>
+                <td>{{ r_user.first_name }}</td>
+                <td>{{ r_user.last_name }}</td>
+                <td>{{ r_user.gender }}</td>
+                <td>{{ r_user.location }}</td>
+                <td>{{ r_user.email }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+
+
+<style>
+    table {border: 1px solid grey;} 
+    th {border: 1px solid grey;}
+    td {border: 1px solid grey;}
+</style>
+
